@@ -1,0 +1,15 @@
+.buttonContainer {
+  height: 4.8rem;
+  border-radius: 999px;
+  padding: 0 1.6rem;
+  background-color: var(--gray-800);
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  span {
+    color: var(--gray-100);
+    font-weight: bold;
+  }
+}
