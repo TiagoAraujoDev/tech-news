@@ -1,5 +1,7 @@
 import { PaperPlaneTilt } from "phosphor-react";
-import SignInButon from "../SignInButton/SignInButton";
+
+import SignInButon from "../SignInButton";
+
 import styles from "./styles.module.scss";
 
 export const Header = () => {
