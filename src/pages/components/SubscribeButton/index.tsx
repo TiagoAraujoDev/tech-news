@@ -1,5 +1,9 @@
 import styles from "./styes.module.scss";
 
-export const SubscribeButton = () => {
+interface SubscribeButtonProps {
+  priceId: string;
+}
+
+export const SubscribeButton = ({ priceId }: SubscribeButtonProps) => {
   return <button className={styles.subscribeButton}>Subscribe now</button>;
 };

@@ -4,7 +4,7 @@ import { RiCloseFill } from "react-icons/ri";
 import styles from "./styles.module.scss";
 
 export default function SignInButon() {
-  const isLogged = false;
+  const isLogged = true;
 
   return isLogged ? (
     <button className={styles.buttonContainer}>
@@ -14,7 +14,7 @@ export default function SignInButon() {
   ) : (
     <button className={styles.buttonContainer}>
       <FaGithub color="#EBA417" size={24} />
-      <span>Sign out</span>
+      <span>Tiago Araujo</span>
       <RiCloseFill color="#fff" size={24} />
     </button>
   );
