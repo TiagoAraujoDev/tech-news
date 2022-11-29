@@ -1,8 +1,9 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 
-import { SubscribeButton } from "./components/SubscribeButton";
 import { stripe } from "../lib/stripe";
+
+import { SubscribeButton } from "./components/SubscribeButton";
 
 import styles from "../styles/pages/home.module.scss";
 
