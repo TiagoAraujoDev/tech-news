@@ -3,11 +3,12 @@ import { buffer } from "micro";
 import Stripe from "stripe";
 
 import { stripe } from "../../lib/stripe";
+import { saveSubscription } from "./_lib/manageSubscription";
 
 export const config = {
   api: {
-    bodyParser: false,
-  },
+    bodyParser: false
+  }
 };
 
 type SecretType = string | Buffer | string[];
@@ -28,16 +29,36 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
         process.env.STRIPE_WEBHOOK_SECRET!
       );
     } catch (error) {
-      console.log("Webhook error:", error)
+      console.log("Webhook error:", error);
       response.status(400).send(`Webhook error: ${error}`);
     }
 
     const type = event.type;
 
     if (relevantEvents.has(type)) {
-      console.log("event received", event);
+      console.log(event);
+      try {
+        switch (type) {
+          case "checkout.session.completed":
+            const checkoutSession = event.data
+              .object as Stripe.Checkout.Session;
+
+            await saveSubscription(
+              checkoutSession.subscription!.toString(),
+              checkoutSession.customer!.toString()
+            );
+            break;
+
+          default:
+            throw new Error("Unhandled event!");
+        }
+      } catch (error) {
+        return response.json({
+          error: `Webhook handler failed. Error: ${error}`
+        });
+      }
     }
-    
+
     return response.json({ received: true });
   } else {
     response.setHeader("Allow", "POST");

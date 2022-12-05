@@ -1,4 +1,4 @@
-import { User } from "next-auth";
+import { NextAuthOptions, User } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
@@ -10,7 +10,7 @@ interface SignIn {
   user: User | AdapterUser;
 }
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID!,
@@ -22,6 +22,8 @@ export const authOptions = {
       }
     })
   ],
+  secret: "x6PQvGcMMrpiSbIP/WxqkJ6HOckl4PpndIAINzAL0a0=",
+  jwt: {},
   callbacks: {
     async signIn({ user }: SignIn): Promise<boolean> {
       const { email } = user;

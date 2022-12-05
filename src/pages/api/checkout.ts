@@ -10,7 +10,7 @@ type User = {
     id: string;
   };
   data: {
-    stripe_custumer_id: string;
+    stripe_customer_id: string;
   };
 };
 
@@ -24,26 +24,26 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       )
     );
 
-    let customerId = user.data.stripe_custumer_id;
+    let customerId = user.data.stripe_customer_id;
 
     if (!customerId) {
-      const stripeCustumer = await stripe.customers.create({
-        email: session?.user?.email!,
+      const stripeCustomer = await stripe.customers.create({
+        email: session?.user?.email!
       });
 
       await fauna.query(
         q.Update(q.Ref(q.Collection("users"), user.ref.id), {
           data: {
-            stripe_custumer_id: stripeCustumer.id,
-          },
+            stripe_customer_id: stripeCustomer.id
+          }
         })
       );
 
-      customerId = stripeCustumer.id;
+      customerId = stripeCustomer.id;
     }
 
-    const successUrl = `${process.env.NEXT_URL}/posts`;
-    const cancelUrl = `${process.env.NEXT_URL}/`;
+    const successUrl = `${process.env.NEXTAUTH_URL}/posts`;
+    const cancelUrl = `${process.env.NEXTAUTH_URL}/`;
 
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -56,13 +56,13 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       line_items: [
         {
           price: "price_1M8p8IJcoW6QFhat3qbJqlRL",
-          quantity: 1,
-        },
-      ],
+          quantity: 1
+        }
+      ]
     });
 
     return response.status(201).json({
-      sessionId: stripeCheckoutSession.id,
+      sessionId: stripeCheckoutSession.id
     });
   } else {
     response.setHeader("Allow", "POST");
