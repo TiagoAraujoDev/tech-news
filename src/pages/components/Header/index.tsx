@@ -1,4 +1,4 @@
-import { PaperPlaneTilt } from "phosphor-react";
+import { FaCode } from "react-icons/fa";
 
 import SignInButon from "../SignInButton";
 
@@ -10,7 +10,7 @@ export const Header = () => {
       <div className={styles.headerContent}>
         <div className={styles.logoContainer}>
           <span>TechNews</span>
-          <PaperPlaneTilt size={24} weight="bold" />
+          <FaCode size={24} />
         </div>
         <nav>
           <a className={styles.linkActive}>Home</a>
