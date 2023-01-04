@@ -1,0 +1,18 @@
+{
+  "slices": {
+    "HeroBanner": {
+      "default": {
+        "items": {}
+      }
+    },
+    "PostContent": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
+  },
+  "_cts": {
+    "blogpost": {}
+  }
+}

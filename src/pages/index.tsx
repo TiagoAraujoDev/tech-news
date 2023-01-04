@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main className={styles.homeContainer}>
       <section className={styles.heroSection}>
-        <span>👋 Hey, I'm Tiago!</span>
+        <span>👋 Hey, I&apos;m Tiago!</span>
         <h1>
-           Let's talk about <span>React and Node.js</span>
+           Let&apos;s talk about <span>React and Node.js</span>
         </h1>
         <p>
           Follow me on my social medias <br />

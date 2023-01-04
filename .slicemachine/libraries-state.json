@@ -1,5 +1,190 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "hero_banner": {
+        "library": "slices",
+        "id": "hero_banner",
+        "name": "HeroBanner",
+        "description": "HeroBanner",
+        "model": {
+          "id": "hero_banner",
+          "type": "SharedSlice",
+          "name": "HeroBanner",
+          "description": "HeroBanner",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeroBanner",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "main_image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Main_Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {
+                "references": {
+                  "type": "Text",
+                  "config": {
+                    "label": "References",
+                    "placeholder": ""
+                  }
+                },
+                "links": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Links",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "references": "carried",
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Dream",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Irure ad nulla ea duis dolor sint reprehenderit enim ipsum eu tempor ex officia. Consequat aliqua minim qui esse labore.",
+                  "spans": []
+                }
+              ],
+              "main_image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+              }
+            },
+            "slice_type": "hero_banner"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "post_content": {
+        "library": "slices",
+        "id": "post_content",
+        "name": "PostContent",
+        "description": "PostContent",
+        "model": {
+          "id": "post_content",
+          "type": "SharedSlice",
+          "name": "PostContent",
+          "description": "PostContent",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "PostContent",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "paragraphs": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Paragraphs",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Rising",
+                  "spans": []
+                }
+              ],
+              "paragraphs": [
+                {
+                  "type": "paragraph",
+                  "text": "Duis velit magna eiusmod sit laboris duis laborum nulla tempor non est fugiat. Adipisicing deserunt et elit laborum fugiat veniam sint sit magna irure magna incididunt irure voluptate. Sunt pariatur commodo sint ex qui pariatur duis esse officia elit deserunt nostrud id.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "post_content"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
   }
 }

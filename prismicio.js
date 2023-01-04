@@ -5,7 +5,6 @@ import sm from "./sm.json";
 export const techNew = prismic.getRepositoryName(sm.apiEndpoint);
 
 // Update the routes array to match the project route structure
-
 const routes = [
   {
     type: "page",

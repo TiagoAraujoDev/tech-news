@@ -1,10 +1,7 @@
 {
   "extends": [
-    "next",
+    "@rocketseat/eslint-config/react",
     "next/core-web-vitals",
     "prettier"
-  ],
-  "rules": {
-    "no-unused-vars": 2
-  }
+  ]
 }
