@@ -1,11 +1,11 @@
-import { FaGithub } from 'react-icons/fa'
-import { RiCloseFill } from 'react-icons/ri'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { FaGithub } from "react-icons/fa";
+import { RiCloseFill } from "react-icons/ri";
+import { useSession, signIn, signOut } from "next-auth/react";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 export default function SignInButon() {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
   return session ? (
     <button
@@ -21,10 +21,10 @@ export default function SignInButon() {
     <button
       type="button"
       className={styles.buttonContainer}
-      onClick={() => signIn('github')}
+      onClick={() => signIn("github")}
     >
       <FaGithub color="#EBA417" size={24} />
       <span>Sign in with Github</span>
     </button>
-  )
+  );
 }

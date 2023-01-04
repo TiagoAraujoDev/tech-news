@@ -3,5 +3,5 @@ export default function Posts() {
     <div>
       <h1>posts list</h1>
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image from "next/image";
 
-import { SocialLinks } from './components/SocialLink'
+import { SocialLinks } from "./components/SocialLink";
 
-import styles from '../styles/pages/home.module.scss'
+import styles from "../styles/pages/home.module.scss";
 
 export default function Home() {
   return (
@@ -19,5 +19,5 @@ export default function Home() {
       </section>
       <Image src="/woman.png" width={334} height={520} priority alt="" />
     </main>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 export const SocialLinks = () => {
   return (
@@ -27,5 +27,5 @@ export const SocialLinks = () => {
         <FaTwitter />
       </a>
     </div>
-  )
-}
+  );
+};

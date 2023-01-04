@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import { FaCode } from 'react-icons/fa'
+import Link from "next/link";
+import { useState } from "react";
+import { FaCode } from "react-icons/fa";
 
-import SignInButon from '../SignInButton'
+import SignInButon from "../SignInButton";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 export const Header = () => {
-  const [active, setActive] = useState<'home' | 'posts'>('home')
+  const [active, setActive] = useState<"home" | "posts">("home");
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -17,16 +17,16 @@ export const Header = () => {
         </div>
         <nav>
           <Link
-            onClick={() => setActive('home')}
+            onClick={() => setActive("home")}
             href="/"
-            className={active === 'home' ? styles.linkActive : ''}
+            className={active === "home" ? styles.linkActive : ""}
           >
             Home
           </Link>
           <Link
-            onClick={() => setActive('posts')}
+            onClick={() => setActive("posts")}
             href="/posts"
-            className={active === 'posts' ? styles.linkActive : ''}
+            className={active === "posts" ? styles.linkActive : ""}
           >
             Posts
           </Link>
@@ -34,5 +34,5 @@ export const Header = () => {
         <SignInButon />
       </div>
     </header>
-  )
-}
+  );
+};
