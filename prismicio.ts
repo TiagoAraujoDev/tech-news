@@ -5,7 +5,7 @@ import sm from "./sm.json";
 export const techNew = prismic.getRepositoryName(sm.apiEndpoint);
 
 // Update the routes array to match the project route structure
-const routes = [
+const routes: prismic.ClientConfig['routes'] = [
   {
     type: "blogpost",
     path: "/posts/:uid",
@@ -19,7 +19,11 @@ const routes = [
  * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
  */
 
-export const createClient = (config = {}) => {
+export const createClient = ({
+  previewData,
+  req,
+  ...config
+}: prismicNext.CreateClientConfig = {}) => {
   const client = prismic.createClient(sm.apiEndpoint, {
     routes,
     ...config,
@@ -27,8 +31,8 @@ export const createClient = (config = {}) => {
 
   prismicNext.enableAutoPreviews({
     client,
-    previewData: config.previewData,
-    req: config.req,
+    previewData,
+    req,
   });
 
   return client;

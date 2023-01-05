@@ -15,7 +15,7 @@ const HeroBanner = ({ slice }) => (
         <h2>Template slice, update me!</h2>
       )}
     </span>
-    {slice.primary.description ? (
+    {slice.primary.main_image ? (
       <PrismicRichText field={slice.primary.description} />
     ) : (
       <p>start by editing this slice from inside Slice Machine!</p>

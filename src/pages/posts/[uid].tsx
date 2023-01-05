@@ -1,22 +1,28 @@
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { createClient } from "../../../prismicio";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 
+import { createClient } from "../../../prismicio";
 import { components } from "../../../slices";
 
-export default function Post({ page, navigation, settings }: any) {
-  console.log(page);
+type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Post({ page }: PageProps) {
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
-export const getStaticProps: GetStaticProps<
-  any,
-  { uid: string; previewData: any }
-> = async ({ params, previewData }) => {
-  const client = createClient({ previewData });
+type PageParams = { uid: string };
 
-  const page = await client.getByUID("blogpost", params!.uid);
+export const getStaticProps = async ({
+  params,
+  previewData,
+}: GetStaticPropsContext<PageParams>) => {
+  if (!params) {
+    return;
+  }
+
+  const client = createClient({ previewData });
+  const page = await client.getByUID("blogpost", params.uid);
 
   return {
     props: {
@@ -25,13 +31,12 @@ export const getStaticProps: GetStaticProps<
   };
 };
 
-export const getStaticPaths: any = async () => {
+export const getStaticPaths = async () => {
   const client = createClient();
-
   const pages = await client.getAllByType("blogpost");
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
-    fallback: true,
+    fallback: false,
   };
 };

@@ -40,15 +40,16 @@
         "references": {
           "type": "Text",
           "config": {
-            "label": "References",
+            "label": "CTA_Text",
             "placeholder": ""
           }
         },
         "links": {
           "type": "Link",
           "config": {
-            "label": "Links",
+            "label": "CTA_Links",
             "placeholder": "",
+            "allowTargetBlank": false,
             "select": null
           }
         }
