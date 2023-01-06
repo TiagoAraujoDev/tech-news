@@ -1,58 +1,53 @@
-import { Content } from "@prismicio/client";
 import { format } from "date-fns";
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { createClient } from "../../../prismicio";
 
-import styles from "../../styles/pages/post.module.scss";
+import styles from "../../styles/pages/posts.module.scss";
 
 interface PostsProps {
-  posts: {
+  postsInfo: {
     id: string;
     uid: string;
     title: string;
-    description: string;
-    created_at: string;
-    img: {
+    description: {
+      type: string;
+      text: string;
+    }[];
+    image: {
       url: string;
       alt: string;
-      dimensions: string;
-      copyright: string;
     };
+    created_at: string;
   }[];
 }
 
-export default function Posts({ posts }: PostsProps) {
-  const handleReadMore = (path: string) => {
-    window.location.href = `/posts/${path}`;
-  };
+export default function Posts({ postsInfo }: PostsProps) {
   return (
     <section className={styles.container}>
-      {posts.map((post) => (
-        <div key={post.id} className={styles.postContainer}>
+      {postsInfo.map((info) => (
+        <div key={info.id} className={styles.postContainer}>
           <Image
-            src={post.img.url}
-            height="150"
+            style={{ borderRadius: "8px" }}
+            src={info.image.url}
+            height="190"
             width="320"
-            alt={post.img.alt}
+            alt={info.image.alt}
           />
-          <div>
+          <div className={styles.infoContainer}>
             <div>
-              <span className={styles.date}>{post.created_at}</span>
+              <span className={styles.date}>{info.created_at}</span>
+              <h2 className={styles.title}>{info.title}</h2>
+              <p className={styles.description}>{info.description[0].text}</p>
             </div>
-            <div>
-              <h2 className={styles.title}>{post.title}</h2>
-            </div>
-            <div>
-              <p className={styles.description}>{post.description}</p>
-            </div>
-            <button
-              onClick={() => handleReadMore(post.uid)}
+            <Link
+              href={`/posts/${info.uid}`}
               className={styles.readBnt}
             >
               Read more
-            </button>
+            </Link>
           </div>
         </div>
       ))}
@@ -64,24 +59,24 @@ export const getStaticProps: GetStaticProps = async () => {
   const client = createClient();
   const pages = await client.getAllByType("blogpost");
 
-  const posts = pages.map((page) => {
-    console.log(page.data.description);
+  const postsInfo = pages.map((page) => {
     return {
       id: page.id,
       uid: page.uid,
       title: page.data.title,
-      description: page.data.description[0]?.text,
+      description: page.data.description,
+      image: page.data.image,
       created_at: format(
         new Date(page.first_publication_date),
         `MMMM dd, yyyy`,
       ),
-      img: page.data.image,
     };
   });
+  console.log(postsInfo);
 
   return {
     props: {
-      posts,
+      postsInfo,
     },
   };
 };
