@@ -42,20 +42,27 @@
                     "constraint": {},
                     "thumbnails": []
                   }
+                },
+                "text_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Text_Color",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {
-                "references": {
+                "link_text": {
                   "type": "Text",
                   "config": {
                     "label": "CTA_Text",
                     "placeholder": ""
                   }
                 },
-                "links": {
+                "link": {
                   "type": "Link",
                   "config": {
-                    "label": "CTA_Links",
+                    "label": "CTA_Link",
                     "placeholder": "",
                     "allowTargetBlank": false,
                     "select": null
@@ -72,10 +79,10 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "references": "liquid",
-                "links": {
+                "link_text": "station",
+                "link": {
                   "link_type": "Web",
-                  "url": "https://slicemachine.dev"
+                  "url": "http://twitter.com"
                 }
               }
             ],
@@ -83,14 +90,14 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Identity",
+                  "text": "Balloon",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Anim irure minim do sunt incididunt commodo fugiat occaecat deserunt sit fugiat cupidatat irure cillum eu. Qui sunt pariatur quis occaecat deserunt nostrud Lorem aliquip est ex. Proident sit cupidatat nostrud aute officia sunt excepteur ad veniam sunt commodo sit sunt.",
+                  "text": "Minim culpa quis ad duis et sint anim.",
                   "spans": []
                 }
               ],
@@ -101,15 +108,16 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
-              }
+                "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+              },
+              "text_color": "#a94e2f"
             },
             "slice_type": "hero_banner"
           }
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       },
@@ -204,7 +212,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       }

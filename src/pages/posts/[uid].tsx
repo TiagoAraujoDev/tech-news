@@ -1,14 +1,27 @@
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { format } from "date-fns";
 
 import { createClient } from "../../../prismicio";
 import { components } from "../../../slices";
 
+import styles from "../../styles/pages/post.module.scss";
+
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Post({ page }: PageProps) {
-  return <SliceZone slices={page.data.slices} components={components} />;
+  const publicationDate = format(
+    new Date(page.first_publication_date),
+    "MMMM dd, yyyy",
+  );
+
+  return (
+    <div className={styles.container}>
+      <span className={styles.date}>{publicationDate}</span>
+      <SliceZone slices={page.data.slices} components={components} />
+    </div>
+  );
 }
 
 type PageParams = { uid: string };

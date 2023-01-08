@@ -34,20 +34,27 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "text_color": {
+          "type": "Color",
+          "config": {
+            "label": "Text_Color",
+            "placeholder": ""
+          }
         }
       },
       "items": {
-        "references": {
+        "link_text": {
           "type": "Text",
           "config": {
             "label": "CTA_Text",
             "placeholder": ""
           }
         },
-        "links": {
+        "link": {
           "type": "Link",
           "config": {
-            "label": "CTA_Links",
+            "label": "CTA_Link",
             "placeholder": "",
             "allowTargetBlank": false,
             "select": null

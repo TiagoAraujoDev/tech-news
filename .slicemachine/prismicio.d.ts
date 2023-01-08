@@ -104,6 +104,16 @@ interface HeroBannerSliceDefaultPrimary {
      *
      */
     main_image: prismicT.ImageField<never>;
+    /**
+     * Text_Color field in *HeroBanner → Primary*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero_banner.primary.text_color
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    text_color: prismicT.ColorField;
 }
 /**
  * Item in HeroBanner → Items
@@ -115,21 +125,21 @@ export interface HeroBannerSliceDefaultItem {
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: hero_banner.items[].references
+     * - **API ID Path**: hero_banner.items[].link_text
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    references: prismicT.KeyTextField;
+    link_text: prismicT.KeyTextField;
     /**
-     * CTA_Links field in *HeroBanner → Items*
+     * CTA_Link field in *HeroBanner → Items*
      *
      * - **Field Type**: Link
      * - **Placeholder**: *None*
-     * - **API ID Path**: hero_banner.items[].links
+     * - **API ID Path**: hero_banner.items[].link
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    links: prismicT.LinkField;
+    link: prismicT.LinkField;
 }
 /**
  * Default variation for HeroBanner Slice

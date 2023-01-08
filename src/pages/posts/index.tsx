@@ -42,10 +42,7 @@ export default function Posts({ postsInfo }: PostsProps) {
               <h2 className={styles.title}>{info.title}</h2>
               <p className={styles.description}>{info.description[0].text}</p>
             </div>
-            <Link
-              href={`/posts/${info.uid}`}
-              className={styles.readBnt}
-            >
+            <Link href={`/posts/${info.uid}`} className={styles.readBnt}>
               Read more
             </Link>
           </div>
@@ -68,11 +65,10 @@ export const getStaticProps: GetStaticProps = async () => {
       image: page.data.image,
       created_at: format(
         new Date(page.first_publication_date),
-        `MMMM dd, yyyy`,
+        "MMMM dd, yyyy",
       ),
     };
   });
-  console.log(postsInfo);
 
   return {
     props: {
