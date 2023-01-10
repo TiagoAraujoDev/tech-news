@@ -5,5 +5,5 @@ export default {
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"link_text":"station","link":{"link_type":"Web","url":"http://twitter.com"}}],"primary":{"title":[{"type":"heading1","text":"Balloon","spans":[]}],"description":[{"type":"paragraph","text":"Minim culpa quis ad duis et sint anim.","spans":[]}],"main_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"},"text_color":"#a94e2f"},"slice_type":"hero_banner","id":"_Default"}} />
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"link_text":"slope","link":{"link_type":"Web","url":"http://google.com"}}],"primary":{"title":[{"type":"heading1","text":"Saddle","spans":[]}],"description":[{"type":"paragraph","text":"Ipsum laboris tempor qui. Dolor anim ex pariatur pariatur velit commodo. Minim velit est amet amet ullamco dolore est esse.","spans":[]}],"main_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1589652717521-10c0d092dea9"}},"slice_type":"hero_banner","id":"_Default"}} />
 _Default.storyName = ''

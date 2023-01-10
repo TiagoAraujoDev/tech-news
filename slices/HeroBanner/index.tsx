@@ -20,13 +20,13 @@ type HeroBannerProps = SliceComponentProps<HeroBannerSlice>;
 
 const HeroBanner = ({ slice }: HeroBannerProps) => (
   <section className={styles.container}>
-    <div className={styles.title} style={{ color: `${slice.primary.text_color}` }}>
+    <PrismicImage field={slice.primary.main_image} />
+    <div className={styles.title}>
       <PrismicRichText field={slice.primary.title} />
     </div>
-    <div className={styles.descrioption} style={{ color: `${slice.primary.text_color}` }}>
+    <div className={styles.descrioption}>
       <PrismicRichText field={slice.primary.description} />
     </div>
-    <PrismicImage field={slice.primary.main_image} />
     <div className={styles.linkContainer}>
       {slice?.items?.map((item, index) => (
         <PrismicLink key={index} field={item.link} target="_blank">

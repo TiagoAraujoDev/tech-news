@@ -7,6 +7,7 @@ import { createClient } from "../../../prismicio";
 import { components } from "../../../slices";
 
 import styles from "../../styles/pages/post.module.scss";
+import Head from "next/head";
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -18,6 +19,9 @@ export default function Post({ page }: PageProps) {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{page.data.title}</title>
+      </Head>
       <span className={styles.date}>{publicationDate}</span>
       <SliceZone slices={page.data.slices} components={components} />
     </div>
@@ -50,6 +54,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
-    fallback: false,
+    fallback: true,
   };
 };

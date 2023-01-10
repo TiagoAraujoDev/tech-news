@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,6 +28,9 @@ interface PostsProps {
 export default function Posts({ postsInfo }: PostsProps) {
   return (
     <section className={styles.container}>
+      <Head>
+        <title>Posts</title>
+      </Head>
       {postsInfo.map((info) => (
         <div key={info.id} className={styles.postContainer}>
           <Image

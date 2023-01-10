@@ -104,16 +104,6 @@ interface HeroBannerSliceDefaultPrimary {
      *
      */
     main_image: prismicT.ImageField<never>;
-    /**
-     * Text_Color field in *HeroBanner → Primary*
-     *
-     * - **Field Type**: Color
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero_banner.primary.text_color
-     * - **Documentation**: https://prismic.io/docs/core-concepts/color
-     *
-     */
-    text_color: prismicT.ColorField;
 }
 /**
  * Item in HeroBanner → Items
@@ -191,22 +181,6 @@ interface PostContentSliceDefaultPrimary {
     paragraphs: prismicT.RichTextField;
 }
 /**
- * Item in PostContent → Items
- *
- */
-export interface PostContentSliceDefaultItem {
-    /**
-     * Tweets field in *PostContent → Items*
-     *
-     * - **Field Type**: Embed
-     * - **Placeholder**: *None*
-     * - **API ID Path**: post_content.items[].tweets
-     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
-     *
-     */
-    tweets: prismicT.EmbedField;
-}
-/**
  * Default variation for PostContent Slice
  *
  * - **API ID**: `default`
@@ -214,7 +188,7 @@ export interface PostContentSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type PostContentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PostContentSliceDefaultPrimary>, Simplify<PostContentSliceDefaultItem>>;
+export type PostContentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PostContentSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *PostContent*
  *
@@ -234,6 +208,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, PostContentSliceDefaultPrimary, PostContentSliceDefaultItem, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, PostContentSliceDefaultPrimary, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
     }
 }

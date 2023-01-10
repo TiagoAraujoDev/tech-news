@@ -42,13 +42,6 @@
                     "constraint": {},
                     "thumbnails": []
                   }
-                },
-                "text_color": {
-                  "type": "Color",
-                  "config": {
-                    "label": "Text_Color",
-                    "placeholder": ""
-                  }
                 }
               },
               "items": {
@@ -79,10 +72,10 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "link_text": "station",
+                "link_text": "slope",
                 "link": {
                   "link_type": "Web",
-                  "url": "http://twitter.com"
+                  "url": "http://google.com"
                 }
               }
             ],
@@ -90,14 +83,14 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Balloon",
+                  "text": "Saddle",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Minim culpa quis ad duis et sint anim.",
+                  "text": "Ipsum laboris tempor qui. Dolor anim ex pariatur pariatur velit commodo. Minim velit est amet amet ullamco dolore est esse.",
                   "spans": []
                 }
               ],
@@ -108,9 +101,8 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
-              },
-              "text_color": "#a94e2f"
+                "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9"
+              }
             },
             "slice_type": "hero_banner"
           }
@@ -119,7 +111,13 @@
           "fileName": "index",
           "extension": "tsx"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/tma/Documents/GitHub/ReactJS/tech-news-nextjs/slices/HeroBanner/default/preview.png",
+            "width": 933,
+            "height": 331
+          }
+        }
       },
       "post_content": {
         "library": "slices",
@@ -157,15 +155,7 @@
                   }
                 }
               },
-              "items": {
-                "tweets": {
-                  "type": "Embed",
-                  "config": {
-                    "label": "Tweets",
-                    "placeholder": ""
-                  }
-                }
-              },
+              "items": {},
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -175,34 +165,20 @@
             "variation": "default",
             "version": "sktwi1xtmkfgx8626",
             "items": [
-              {
-                "tweets": {
-                  "embed_url": "https://twitter.com/timbenniks/status/1304146886832594944",
-                  "author_name": "Tim Benniks",
-                  "author_url": "https://twitter.com/timbenniks",
-                  "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">I’ve been diving deep on <a href=\"https://twitter.com/prismicio?ref_src=twsrc%5Etfw\">@prismicio</a> <a href=\"https://twitter.com/hashtag/slicemachine?src=hash&amp;ref_src=twsrc%5Etfw\">#slicemachine</a> today. I made all my own components and I used custom slices. It works like a charm with <a href=\"https://twitter.com/nuxt_js?ref_src=twsrc%5Etfw\">@nuxt_js</a>. Also\": I’m coding with this view. <a href=\"https://t.co/F0I8X9gz39\">pic.twitter.com/F0I8X9gz39</a></p>&mdash; Tim Benniks (@timbenniks) <a href=\"https://twitter.com/timbenniks/status/1304146886832594944?ref_src=twsrc%5Etfw\">September 10, 2020</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
-                  "width": 550,
-                  "height": null,
-                  "type": "rich",
-                  "cache_age": "3153600000",
-                  "provider_name": "Twitter",
-                  "provider_url": "http://www.twitter.com/",
-                  "version": "1.0"
-                }
-              }
+              {}
             ],
             "primary": {
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Powder",
+                  "text": "Donkey",
                   "spans": []
                 }
               ],
               "paragraphs": [
                 {
                   "type": "paragraph",
-                  "text": "Incididunt duis dolore labore sit magna elit anim. Officia ullamco non nisi qui laboris velit in fugiat. Eu tempor deserunt ullamco mollit aliquip deserunt occaecat deserunt adipisicing.",
+                  "text": "Excepteur cupidatat reprehenderit enim aute Lorem exercitation.",
                   "spans": []
                 }
               ]
@@ -214,7 +190,13 @@
           "fileName": "index",
           "extension": "tsx"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/tma/Documents/GitHub/ReactJS/tech-news-nextjs/slices/PostContent/default/preview.png",
+            "width": 933,
+            "height": 352
+          }
+        }
       }
     }
   }

@@ -34,13 +34,6 @@
             "constraint": {},
             "thumbnails": []
           }
-        },
-        "text_color": {
-          "type": "Color",
-          "config": {
-            "label": "Text_Color",
-            "placeholder": ""
-          }
         }
       },
       "items": {
