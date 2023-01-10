@@ -1,13 +1,16 @@
-import { NextAuthOptions, User } from "next-auth";
+import { NextAuthOptions, User as UserType } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
-import { query as q } from "faunadb";
 
-import { fauna } from "../../../lib/fauna";
+import {
+  closeMongodbConnection,
+  createMongodbConnection,
+} from "../../../lib/mongodb/mongodb";
+import { User } from "../../../lib/mongodb/models/user";
 
 interface SignIn {
-  user: User | AdapterUser;
+  user: UserType | AdapterUser;
 }
 
 export const authOptions: NextAuthOptions = {
@@ -26,20 +29,18 @@ export const authOptions: NextAuthOptions = {
   jwt: {},
   callbacks: {
     async signIn({ user }: SignIn): Promise<boolean> {
-      const { email } = user;
-
       try {
-        await fauna.query(
-          q.If(
-            q.Not(
-              q.Exists(
-                q.Match(q.Index("user_by_email"), q.Casefold(user.email!)),
-              ),
-            ),
-            q.Create(q.Create(q.Collection("users"), { data: { email } })),
-            q.Get(q.Match(q.Index("user_by_email"), q.Casefold(user.email!))),
-          ),
-        );
+        await createMongodbConnection().catch((err) => console.log(err));
+
+        const userAlreadyExist = await User.findOne({ id: user.id }).exec();
+        if (userAlreadyExist) {
+          return true;
+        }
+
+        const newUser = new User(user);
+        await newUser.save();
+
+        await closeMongodbConnection().catch((err) => console.log(err));
 
         return true;
       } catch {
