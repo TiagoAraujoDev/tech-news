@@ -8,7 +8,7 @@
  <a href="#autor">Author</a>
 </p>
 <h4 align="center"> 
-    Blog TechNews 🚀 in progress!
+    Blog TechNews 🚀 completed!
 </h4>
 
 <h3 id="pre-requisitos">Prerequisites</h3>
@@ -20,7 +20,7 @@ Besides, it's good to have an editor to work with the code like [VSCode](https:/
 <h3 id="objetivo">🎯 Goals</h3>
 
 - I build this blog to have my own space to share my knowledge about development. Not only programming languages but all the tools that surround me. Code editors, frameworks or news about the tech world.
-- To build this blog I choose to use Nextjs because It gives performance with SSG, have the possibility to create the backend part that I needed for this project for now. It will be overkill to build an API just to save a user in the database.
+- To build this blog I choose to use Nextjs because It gives performance with SSG, have the possibility to create the backend part that I needed for this project for now. It would be overkill to build an API just to save a user in the database.
 - Alongside with Nextjs I used Prismic.io, a headless CMS that allow me to create the posts and the app fetchs all the data using the Prismic API. I think that was the best option because if the application get bigger with more functionalities, Prismic gives me the capability to grew up the app.
 - I Used MongoDB for performance and easy setup.
  
