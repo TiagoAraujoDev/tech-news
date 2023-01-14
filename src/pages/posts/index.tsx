@@ -29,7 +29,7 @@ export default function Posts({ postsInfo }: PostsProps) {
   return (
     <section className={styles.container}>
       <Head>
-        <title>Posts</title>
+        <title>Posts | TechNews</title>
       </Head>
       {postsInfo.map((info) => (
         <div key={info.id} className={styles.postContainer}>

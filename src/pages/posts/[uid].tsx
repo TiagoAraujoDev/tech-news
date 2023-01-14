@@ -20,7 +20,7 @@ export default function Post({ page }: PageProps) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{page.data.title}</title>
+        <title>Post | {page.data.title}</title>
       </Head>
       <span className={styles.date}>{publicationDate}</span>
       <SliceZone slices={page.data.slices} components={components} />

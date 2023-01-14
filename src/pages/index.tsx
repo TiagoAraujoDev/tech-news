@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className={styles.homeContainer}>
       <Head>
-        <title>Home</title>
+        <title>Home | TechNews</title>
       </Head>
       <section className={styles.heroSection}>
         <span>👋 Hey, I&apos;m Tiago!</span>
