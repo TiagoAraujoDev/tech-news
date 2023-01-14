@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { SocialLinks } from "./components/SocialLink";
+import { SocialLinks } from "../components/SocialLink";
 
 import styles from "../styles/pages/home.module.scss";
 

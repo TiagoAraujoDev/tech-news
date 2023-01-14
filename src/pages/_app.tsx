@@ -6,8 +6,8 @@ import { PrismicProvider } from "@prismicio/react";
 
 import { techNew } from "../../prismicio";
 
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 import "../styles/globals.scss";
 
