@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { RiCloseFill } from "react-icons/ri";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-import styles from "../../../styles/components/signInButton.module.scss";
+import styles from "../../styles/components/signInButton.module.scss";
 
 export default function SignInButon() {
   const { data: session } = useSession();
