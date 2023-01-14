@@ -54,6 +54,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
-    fallback: true,
+    fallback: false,
   };
 };
