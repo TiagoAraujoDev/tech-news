@@ -4,7 +4,7 @@ import { FaCode } from "react-icons/fa";
 
 import SignInButon from "../SignInButton";
 
-import styles from "./styles.module.scss";
+import styles from "../../../styles/components/header.module.scss";
 
 export const Header = () => {
   const router = useRouter();

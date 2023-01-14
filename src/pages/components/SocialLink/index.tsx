@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-import styles from "./styles.module.scss";
+import styles from "../../../styles/components/socialLinks.module.scss";
 
 export const SocialLinks = () => {
   return (
