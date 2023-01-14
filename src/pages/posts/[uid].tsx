@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
@@ -7,7 +8,6 @@ import { createClient } from "../../../prismicio";
 import { components } from "../../../slices";
 
 import styles from "../../styles/pages/post.module.scss";
-import Head from "next/head";
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
