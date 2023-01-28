@@ -113,11 +113,70 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/home/tma/Documents/GitHub/ReactJS/tech-news-nextjs/slices/HeroBanner/default/preview.png",
+            "path": "/home/tma/Documents/GitHub/tech-news-nextjs/slices/HeroBanner/default/preview.png",
             "width": 933,
             "height": 331
           }
         }
+      },
+      "image_content": {
+        "library": "slices",
+        "id": "image_content",
+        "name": "ImageContent",
+        "description": "ImageContent",
+        "model": {
+          "id": "image_content",
+          "type": "SharedSlice",
+          "name": "ImageContent",
+          "description": "ImageContent",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ImageContent",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb"
+              }
+            },
+            "slice_type": "image_content"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
       },
       "post_content": {
         "library": "slices",
@@ -192,7 +251,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/home/tma/Documents/GitHub/ReactJS/tech-news-nextjs/slices/PostContent/default/preview.png",
+            "path": "/home/tma/Documents/GitHub/tech-news-nextjs/slices/PostContent/default/preview.png",
             "width": 933,
             "height": 352
           }

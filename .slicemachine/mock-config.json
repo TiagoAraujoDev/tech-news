@@ -11,6 +11,11 @@
         "primary": {},
         "items": {}
       }
+    },
+    "ImageContent": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {

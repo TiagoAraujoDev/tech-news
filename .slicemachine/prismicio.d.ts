@@ -155,6 +155,45 @@ type HeroBannerSliceVariation = HeroBannerSliceDefault;
  */
 export type HeroBannerSlice = prismicT.SharedSlice<"hero_banner", HeroBannerSliceVariation>;
 /**
+ * Primary content in ImageContent → Primary
+ *
+ */
+interface ImageContentSliceDefaultPrimary {
+    /**
+     * image field in *ImageContent → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image_content.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for ImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ImageContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageContentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageContentSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ImageContent*
+ *
+ */
+type ImageContentSliceVariation = ImageContentSliceDefault;
+/**
+ * ImageContent Shared Slice
+ *
+ * - **API ID**: `image_content`
+ * - **Description**: `ImageContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageContentSlice = prismicT.SharedSlice<"image_content", ImageContentSliceVariation>;
+/**
  * Primary content in PostContent → Primary
  *
  */
@@ -208,6 +247,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, PostContentSliceDefaultPrimary, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, ImageContentSliceDefaultPrimary, ImageContentSliceDefault, ImageContentSliceVariation, ImageContentSlice, PostContentSliceDefaultPrimary, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
     }
 }
