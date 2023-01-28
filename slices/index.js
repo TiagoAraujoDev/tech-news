@@ -13,6 +13,5 @@ export {
 export const components = {
 	hero_banner: HeroBanner,
 	image_content: ImageContent,
-	image: Image,
 	post_content: PostContent,
 };
