@@ -57,7 +57,7 @@ interface BlogpostDocumentData {
  * Slice for *BlogPost → Slice Zone*
  *
  */
-type BlogpostDocumentDataSlicesSlice = HeroBannerSlice | PostContentSlice;
+type BlogpostDocumentDataSlicesSlice = HeroBannerSlice | PostContentSlice | ImageContentSlice;
 /**
  * BlogPost document from Prismic
  *
