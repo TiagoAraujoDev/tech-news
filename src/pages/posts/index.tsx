@@ -65,9 +65,9 @@ export default function Posts({ posts }: PostsProps) {
             <div>
               <span className={styles.date}>{info.created_at}</span>
               <h2 className={styles.title}>{info.title}</h2>
-              {info.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
+              {/* {info.tags.map((tag) => ( */}
+              {/*   <span key={tag}>{tag}</span> */}
+              {/* ))} */}
               <p className={styles.description}>{info.description[0].text}</p>
             </div>
             <Link href={`/posts/${info.uid}`} className={styles.readBnt}>
