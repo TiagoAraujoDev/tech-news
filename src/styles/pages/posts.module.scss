@@ -18,11 +18,9 @@
   }
 
   &:hover {
-    box-shadow: 5px 5px 1px 3px rgba(75, 85, 99, 0.4);
-    position: relative;
-    right: 4px;
-    bottom: 3px;
-    transition: 0.2s ease-in-out all;
+    border: 1px solid var(--green);
+    transform: scale(1.03);
+    transition: 0.3s ease transform;
   }
 }
 
@@ -57,6 +55,8 @@
 
   &:hover {
     font-weight: bold;
-    border: 1px dashed var(--green);
+    background-color: var(--green);
+    color: var(--gray-100);
+    border: 1px solid var(--green);
   }
 }
