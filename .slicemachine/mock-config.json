@@ -16,6 +16,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "CodeBlock": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {

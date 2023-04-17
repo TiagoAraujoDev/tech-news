@@ -70,6 +70,55 @@ type BlogpostDocumentDataSlicesSlice = HeroBannerSlice | PostContentSlice | Imag
 export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
 export type AllDocumentTypes = BlogpostDocument;
 /**
+ * Primary content in CodeBlock → Primary
+ *
+ */
+interface CodeBlockSliceDefaultPrimary {
+    /**
+     * Lang field in *CodeBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: code_block.primary.lang
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    lang: prismicT.KeyTextField;
+    /**
+     * Code field in *CodeBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: code_block.primary.code
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    code: prismicT.KeyTextField;
+}
+/**
+ * Default variation for CodeBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `CodeBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CodeBlockSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *CodeBlock*
+ *
+ */
+type CodeBlockSliceVariation = CodeBlockSliceDefault;
+/**
+ * CodeBlock Shared Slice
+ *
+ * - **API ID**: `code_block`
+ * - **Description**: `CodeBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeBlockSlice = prismicT.SharedSlice<"code_block", CodeBlockSliceVariation>;
+/**
  * Primary content in HeroBanner → Primary
  *
  */
@@ -247,6 +296,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, ImageContentSliceDefaultPrimary, ImageContentSliceDefault, ImageContentSliceVariation, ImageContentSlice, PostContentSliceDefaultPrimary, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, CodeBlockSliceDefaultPrimary, CodeBlockSliceDefault, CodeBlockSliceVariation, CodeBlockSlice, HeroBannerSliceDefaultPrimary, HeroBannerSliceDefaultItem, HeroBannerSliceDefault, HeroBannerSliceVariation, HeroBannerSlice, ImageContentSliceDefaultPrimary, ImageContentSliceDefault, ImageContentSliceVariation, ImageContentSlice, PostContentSliceDefaultPrimary, PostContentSliceDefault, PostContentSliceVariation, PostContentSlice };
     }
 }
