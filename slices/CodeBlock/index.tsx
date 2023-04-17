@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
-import shiki from "shiki";
 
-import style from "../../src/styles/slices/CodeBlock.module.scss";
+import { CodeBlockContainer } from "../../src/components/CodeBlockContainer";
 
 /**
  * @typedef {import("@prismicio/client").Content.CodeBlockSlice} CodeBlockSlice
@@ -15,29 +13,13 @@ type CodeBlockSlice = Content.CodeBlockSlice;
 type CodeBlockProps = SliceComponentProps<CodeBlockSlice>;
 
 const CodeBlock = ({ slice }: CodeBlockProps) => {
-  const rawCode = slice.primary.code as string;
+  const code = slice.primary.code as string;
   const lang = slice.primary.lang as string;
-
-  const [hlCode, setHlCode] = useState("");
-
-  useEffect(() => {
-    shiki
-      .getHighlighter({
-        theme: "one-dark-pro",
-      })
-      .then((highlighter) => {
-        const highlightedCode = highlighter.codeToHtml(rawCode, { lang });
-        setHlCode(highlightedCode)
-      })
-  }, [hlCode, lang]);
-
-  return (
-    <section>
-      <div
-        className={style.container}
-        dangerouslySetInnerHTML={{ __html: hlCode }}
-      />
-    </section>
-  );
+  return <CodeBlockContainer code={code} lang={lang} />;
+  // return (
+  //   <div>
+  //     <h1 style={{ backgroundColor: "black" }}>{code}</h1>
+  //   </div>
+  // );
 };
 export default CodeBlock;

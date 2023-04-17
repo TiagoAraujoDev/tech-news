@@ -47,8 +47,8 @@
               {}
             ],
             "primary": {
-              "lang": "greater",
-              "code": "leader"
+              "lang": "than",
+              "code": "south"
             },
             "slice_type": "code_block"
           }
