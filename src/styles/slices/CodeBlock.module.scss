@@ -10,11 +10,26 @@
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 15px;
+  right: 90px;
   background-color: transparent;
   color: white;
   text-align: center;
   z-index: 10;
+}
+
+.textNotCopied {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.textCopied {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--green);
 }
   

@@ -2,7 +2,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
 import { useEffect, useRef, useState } from "react";
 import hljs from "highlight.js";
-import { Clipboard } from "phosphor-react";
+import { Check, Clipboard } from "phosphor-react";
 
 import style from "../../src/styles/slices/CodeBlock.module.scss";
 
@@ -16,8 +16,7 @@ type CodeBlockSlice = Content.CodeBlockSlice;
 type CodeBlockProps = SliceComponentProps<CodeBlockSlice>;
 
 const CodeBlock = ({ slice }: CodeBlockProps) => {
-  const [copy, setCopy] = useState(false);
-  const codeRef = useRef(null);
+  const [isCopied, setIsCopied] = useState(false);
 
   const lang = slice.primary.lang as string;
 
@@ -26,16 +25,27 @@ const CodeBlock = ({ slice }: CodeBlockProps) => {
   }, []);
 
   const handleCopyText = () => {
-    setCopy(true);
     navigator.clipboard.writeText(slice.primary.code!);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
   };
 
   return (
     <section className={style.container}>
       <button onClick={handleCopyText} className={style.clipboardBtn}>
-        {copy ? <span>copied!</span> : <Clipboard size={24} color="#fff" />}
+        {isCopied ? (
+          <span className={style.textCopied}>
+            <Check size={24} color="#04d361" /> copied!
+          </span>
+        ) : (
+          <span className={style.textNotCopied}>
+            <Clipboard size={24} color="#fff" /> copy text
+          </span>
+        )}
       </button>
-      <pre className={`hljs ${lang}`} ref={codeRef}>
+      <pre className={`hljs ${lang}`}>
         <code>{slice.primary.code}</code>
       </pre>
     </section>
